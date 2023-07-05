@@ -1,0 +1,441 @@
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+::before,
+::after {
+    box-sizing: unset !important;
+}
+
+:root {
+    --main-color: #FF9800;
+    --sec-bg: #eee;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif !important;
+}
+
+.container>.title {
+    color: var(--main-color);
+}
+
+/* Settings */
+.settings {
+    width: 200px;
+    background-color: #fff;
+    translate: -100% 0;
+    transition: .4s;
+    box-shadow: 2px 0 21px -8px;
+}
+
+.ShowSetting {
+    translate: 0 0;
+}
+
+.settings .gear {
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    right: -30px;
+    top: 100px;
+    cursor: pointer;
+    background-color: #fff;
+    transition: .5s;
+}
+
+.settings .box {
+    background-color: #eee;
+}
+
+.settings .colors .color-obt {
+    display: flex;
+    gap: 7px;
+}
+
+.settings .colors .color-obt .ob {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.settings .colors .color-obt .yellow {
+    background-color: #FF9800;
+}
+
+.settings .colors .color-obt .red {
+    background-color: #E91E63;
+}
+
+.settings .colors .color-obt .dark-green {
+    background-color: #009688;
+}
+
+.settings .colors .color-obt .blue {
+    background-color: #03A9F4;
+}
+
+.settings .colors .color-obt .green {
+    background-color: #4CAF50;
+}
+
+.settings .colors .color-obt .active {
+    outline: solid 3px #fff;
+}
+
+.settings .bulletsSetting .buttons button {
+    width: 50px;
+    border: none;
+    color: #fff;
+    font-size: 14px;
+    background-color: var(--main-color);
+    opacity: .5;
+}
+
+.settings .bulletsSetting .buttons .active {
+    opacity: 1;
+}
+
+/* Bullets Links */
+.bullets {
+    top: 50%;
+    right: 20px;
+    z-index: 99;
+    translate: 0 -50%;
+    z-index: 999;
+}
+
+.bullets .bullet {
+    width: 20px;
+    height: 20px;
+    position: relative;
+    background-color: transparent;
+    border: solid 2px var(--main-color);
+    border-radius: 50%;
+    margin: 20px 0;
+    cursor: pointer;
+}
+
+.bullets .bullet .tip {
+    position: absolute;
+    right: 35px;
+    top: 50%;
+    translate: 0 -50%;
+    background-color: var(--main-color);
+    width: 120px;
+    text-align: center;
+    color: #fff;
+    padding: 6px 0;
+    display: none;
+}
+
+.bullets .bullet:hover .tip {
+    display: block;
+}
+
+.bullets .bullet .tip::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    right: -22px;
+    top: 50%;
+    translate: 0 -50%;
+    border: solid 11px;
+    border-color: transparent transparent transparent var(--main-color);
+}
+
+/* Header */
+nav .navbar-toggler:active {
+    box-shadow: 0 0 0 0.25rem var(--main-color) !important;
+}
+
+nav .navbar-toggler:focus {
+    box-shadow: none;
+}
+
+nav .fa-bars {
+    color: var(--main-color);
+}
+
+.nav-item .nav-link {
+    transition: .4s;
+}
+
+.nav-item .nav-link:hover {
+    color: var(--main-color) !important;
+}
+
+/* Landing */
+.landing::before {
+    content: "";
+    background-color: rgba(0, 0, 0, .6);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: 1;
+}
+
+.landing .con {
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    z-index: 99;
+}
+
+.landing .con h1 span {
+    color: var(--main-color);
+}
+
+/* About */
+.about .container .row .col-lg-6 h2 {
+    color: var(--main-color)
+}
+
+.about .container .row .col-lg-6 h2+p {
+    color: #767676;
+    line-height: 1.8;
+}
+
+/* Skills */
+.skills-sec {
+    background-color: var(--sec-bg);
+}
+
+
+.skills-sec .container .skills .skill {
+    background-color: #fff;
+}
+
+.skills-sec .container .skills .skill .name {
+    width: 120px;
+}
+
+.skills-sec .container .skills .skill .progress {
+    height: 30px;
+    background-color: #f6f6f6;
+}
+
+.skills-sec .container .skills .skill .progress .progress-bar {
+    background-color: var(--main-color);
+    width: 0;
+    transition: .5s;
+}
+
+/* Gallery */
+.gallery .container .row .col-lg-2>img {
+    cursor: pointer;
+}
+
+/* Time Line */
+.timeLine {
+    background-color: var(--sec-bg);
+    position: relative;
+}
+
+.timeLine::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    translate: -50% 0;
+    width: 2px;
+    height: calc(100% - 6rem);
+    background-color: var(--main-color);
+}
+
+.timeLine .container .time {
+    color: #fff;
+    background-color: var(--main-color);
+    width: fit-content;
+}
+
+.timeLine .container .box .con {
+    width: calc(50% - 25px);
+    margin-bottom: 40px;
+    position: relative;
+}
+
+@media (max-width: 991px) {
+    .timeLine .container .box .con {
+        width: 100%;
+    }
+
+    .timeLine .container .con::before {
+        display: none;
+    }
+
+    .timeLine .container .con::after {
+        display: none;
+    }
+}
+
+.timeLine .container .box h5 {
+    color: var(--main-color);
+}
+
+.timeLine .container .box p {
+    color: #666;
+    line-height: 1.6;
+}
+
+.timeLine .container .con::before {
+    content: '';
+    border-style: solid;
+    border-width: 10px;
+    border-color: transparent transparent transparent #FFF;
+    height: 0;
+    width: 0;
+    position: absolute;
+    right: -20px;
+    top: 20px;
+}
+
+.timeLine .container .con::after {
+    content: '';
+    width: 14px;
+    height: 14px;
+    background-color: #FFF;
+    border: 3px solid var(--main-color);
+    position: absolute;
+    border-radius: 50%;
+    top: 20px;
+    right: -35px;
+}
+
+.timeLine .container .right::before {
+    left: -20px;
+    border-color: transparent #fff transparent transparent;
+}
+
+.timeLine .container .right::after {
+    left: -35px;
+}
+
+/* Our Features */
+.features .container .row .col-lg-4 h4::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -12px;
+    width: 80px;
+    height: 3px;
+    translate: -50% 0;
+    background-color: var(--main-color);
+}
+
+.features .container .row .col-lg-4 p {
+    color: #706f6f;
+    line-height: 1.7;
+    padding: 0 16px;
+}
+
+@media (max-width: 991px) {
+    .features .container .row .col-lg-4 p {
+        padding: 0;
+    }
+}
+
+/* Testimonials */
+.testimonials {
+    background-image: linear-gradient(to right, var(--main-color) 50%, #333 50%);
+}
+
+.testimonials .container .boxs {
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+}
+
+@media (max-width: 450px) {
+    .testimonials .container .boxs {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+}
+
+.testimonials .container .boxs .box>p {
+    color: #707070;
+    font-size: 15px;
+}
+
+.testimonials .container .boxs .box .info img {
+    width: 80px;
+    height: 80px;
+}
+
+/* Contact Us */
+.contact {
+    background-image: url(../images/contact.png);
+    background-position: center;
+    background-size: cover;
+    padding-bottom: 100px;
+}
+
+.contact::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 60%);
+    z-index: 0;
+}
+
+.contact .container>h2 {
+    color: var(--main-color);
+}
+
+
+.contact .container form .left input,
+.contact .container form textarea {
+    width: 400px;
+    border: 1px solid #CCC;
+    background-color: rgba(218, 218, 218, 0.19);
+}
+
+.contact .container form textarea {
+    height: 158px;
+}
+
+.contact .container form .left input:focus,
+.contact .container form textarea:focus {
+    outline: none;
+    border-right-color: var(--main-color);
+    border-bottom-color: var(--main-color);
+}
+
+.contact .container form .right a {
+    background-color: var(--main-color);
+    height: 42px;
+}
+
+@media (max-width: 991px) {
+
+    .contact .container form .left,
+    .contact .container form .right {
+        width: 100%;
+    }
+
+    .contact .container form .left input,
+    .contact .container form textarea {
+        width: 100%;
+    }
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: #eee;
+}
+
+footer p span {
+    color: var(--main-color);
+}
